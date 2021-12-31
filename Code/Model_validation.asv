@@ -1,0 +1,14 @@
+%I= imread("seg_test/street/24292.jpg");
+%I = imresize(I, [227 227]);
+%[Ypred, prob] = classify(trainedNetwork_1, I);
+%imshow(I)
+%label = Ypred;
+%title(string(label)+","+num2str(100*max(prob),3)+ "%");
+
+d = 'seg_test/street';
+for i=1:10:
+f = dir([d '\*.jpg']);
+n = numel(f);
+idx = randi(n);
+im=imread(f(idx).name);
+imshow(im)
